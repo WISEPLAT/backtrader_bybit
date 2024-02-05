@@ -72,7 +72,7 @@ class BybitBroker(BrokerBase):
 
     def _handle_user_socket_message(self, msg):
         """https://bybit-exchange.github.io/docs/v5/websocket/private/position"""
-        print(msg)
+        # print(msg)
         # !!!! {'retCode': 0, 'retMsg': 'OK', 'result': {'orderId': '1613710659319764224', 'orderLinkId': '1613710659319764225'}, 'retExtInfo': {}, 'time': 1707105301238}
         # {'topic': 'order', 'id': '112927970-22008-17722138290', 'creationTime': 1707105301240,
         # 'data': [{'category': 'spot', 'symbol': 'ETHUSDT', 'orderId': '1613710659319764224', 'orderLinkId': '1613710659319764225', 'blockTradeId': '', 'side': 'Buy', 'positionIdx': 0, 'orderStatus': 'New',
@@ -91,7 +91,7 @@ class BybitBroker(BrokerBase):
             for d in msg['data']:
                 if d['symbol'] in self._store.symbols:
                     # print(f"msg: {d['symbol']}")
-                    print(len(self.open_orders))
+                    # print(len(self.open_orders))
                     for o in self.open_orders:
                         # print("o:", o)
                         # print("o.bybit_order:", o.bybit_order)
