@@ -1,0 +1,4 @@
+pybit
+backtrader
+pandas
+matplotlib
