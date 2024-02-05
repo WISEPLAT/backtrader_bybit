@@ -14,7 +14,7 @@ with codecs.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(name='backtrader_bybit',
-      version='1.0.5',
+      version='1.0.7',
       author='wiseplat',
       author_email='oshpagin@gmail.com',
       license='MIT License',
@@ -23,7 +23,7 @@ setup(name='backtrader_bybit',
       long_description_content_type='text/markdown',
       url='https://github.com/WISEPLAT/backtrader_bybit',
       packages=find_packages(exclude=['docs', 'examples', 'ConfigBybit']),
-      install_requires=['pybit', 'backtrader', 'pandas', 'matplotlib'],
+      install_requires=['pybit', 'pycryptodome', 'backtrader', 'pandas', 'matplotlib'],
       classifiers=[
           # How mature is this project? Common values are
           #   3 - Alpha
