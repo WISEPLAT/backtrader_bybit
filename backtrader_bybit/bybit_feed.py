@@ -29,6 +29,9 @@ class BybitData(DataBase):
 
         self.symbol = self.p.dataname
 
+        self.limit = 200
+        if 'rows_by_request' in kwargs: self.limit = kwargs['rows_by_request']
+
         if hasattr(self.p, 'timeframe'): self.timeframe = self.p.timeframe
         if hasattr(self.p, 'compression'): self.compression = self.p.compression
         if 'start_date' in kwargs: self.start_date = kwargs['start_date']
@@ -189,34 +192,60 @@ class BybitData(DataBase):
             self._state = self._ST_HISTORBACK
             self.put_notification(self.DELAYED)
 
-            _now = datetime.now()
-            klines = self._store.bybit_session.get_kline(
-                category=self._store.category,
-                symbol=self.symbol,
-                interval=self.interval,
-                start=round(self.start_date.timestamp()*1000),  # in milliseconds
-                end=round(_now.timestamp()*1000),  # in milliseconds
-            )
-
-            self.get_live_bars_from = _now
-
-            print(f"- {self.symbol} - History data - Ok")
-
-            if 'result' in klines and 'list' in klines['result'] and klines['result']['list']:
-                klines = klines['result']['list']
-                klines = klines[::-1]  # inverse
-                klines = klines[:-1]  # -1 last row as it can be in process of forming
+            # calc number of request, when we have start_date, and limit rows per request
+            if self.interval not in ['D', 'W', 'M']:
+                delta_time = int(self.interval)
             else:
-                klines = []
+                if self.interval == 'D': delta_time = 60 * 24
+                if self.interval == 'W': delta_time = 60 * 24 * 7
+                if self.interval == 'W': delta_time = 60 * 24 * 30
 
-            self.all_history_data = klines  # first receive of the history -> save it to a list
+            total_minutes = (datetime.now() - self.start_date).total_seconds() // 60
+            num_requests = int(total_minutes // (self.limit * delta_time))
+            self.start_date = round(self.start_date.timestamp()*1000)
 
-            try:
-                if self.p.drop_newest:
-                    klines.pop()
-                self._data.extend(klines)
-            except Exception as e:
-                print("Exception (try set from_date in utc format):", e)
+            # get all rows by limit per request
+            for i in range(num_requests+1):
+                _now = datetime.now()
+                klines = self._store.bybit_session.get_kline(
+                    category=self._store.category,
+                    symbol=self.symbol,
+                    interval=self.interval,
+                    start=self.start_date,  # in milliseconds
+                    # end=round(_now.timestamp()*1000),  # in milliseconds
+                    limit=self.limit,
+                )
+
+                self.get_live_bars_from = _now
+
+                print(f"- {self.symbol} - History data from {datetime.fromtimestamp(int(self.start_date) // 1000)} + {self.limit} rows - Ok")
+
+                if 'result' in klines and 'list' in klines['result'] and klines['result']['list']:
+                    klines = klines['result']['list']
+                    klines = klines[::-1]  # inverse
+                    klines = klines[:-1]  # -1 last row as it can be in process of forming
+                else:
+                    klines = []
+
+                if not self.all_history_data:
+                    self.all_history_data = klines  # first receive of the history -> save it to a list
+                else:
+                    self.all_history_data.extend(klines)
+
+                try:
+                    if self.p.drop_newest:
+                        klines.pop()
+                    self._data.extend(klines)
+                except Exception as e:
+                    print("Exception (try set from_date in utc format):", e)
+
+                # change self.start_date at every request
+                self.start_date = self.all_history_data[-1][0]  # timestamp
+                # b = self.start_date
+                self.start_date = datetime.fromtimestamp(int(self.start_date) / 1000) + timedelta(minutes=delta_time)
+                self.start_date = round(int(self.start_date.timestamp()) * 1000)
+                # print(f"\t --> {datetime.fromtimestamp(int(b) / 1000)} {datetime.fromtimestamp(int(self.start_date) / 1000)}")
+
 
         else:
             self._start_live()
