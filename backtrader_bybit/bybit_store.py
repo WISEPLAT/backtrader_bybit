@@ -89,9 +89,10 @@ class BybitStore(object):
         balance = {}
         if w and 'result' in w and w['result'] and 'list' in w['result'] and w['result']['list']:
             for _coin in w['result']['list'][0]['coin']:
+                locked = _coin['locked'] if 'locked' in _coin else 0
                 balance[_coin['coin']] = {"free": _coin['availableToWithdraw'],
                                           "usdValue": _coin['usdValue'],
-                                          "locked": _coin['locked'], }
+                                          "locked": locked, }
         if asset in balance.keys():
             return float(balance[asset]['free']), float(balance[asset]['locked'])
         else:
