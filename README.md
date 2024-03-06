@@ -8,6 +8,11 @@ With this integration you can do:
 
 For API connection we are using library [pybit](https://github.com/bybit-exchange/pybit).
 
+✅ Online Example for [ByBit BACKTEST Trading Strategy for BTC and ETH #2](https://www.kaggle.com/code/olegshpagin/bybit-backtest-trading-strategy-for-btc-and-eth-2)
+
+✅ Online Example for [LIVE Trading Strategy for Ethereum on Bybit](https://www.kaggle.com/code/olegshpagin/live-trading-strategy-for-ethereum-on-bybit)
+
+
 **You can say Thanks:**
 
 USDT (Tron TRC20): TEHaXZX7KLjAm4eLWdf4VKfsqRUQpv8fTT
@@ -181,6 +186,11 @@ Please put a Star 🌟 for this code
 - Загружать исторические данные по криптовалютам с биржи [Bybit](https://www.bybit.com/invite?ref=KXLXXE%230 )
 
 Для подключения к API мы используем библиотеку [pybit](https://github.com/bybit-exchange/pybit ).
+
+✅ Online Пример для [ByBit BACKTEST Trading Strategy for BTC and ETH #2](https://www.kaggle.com/code/olegshpagin/bybit-backtest-trading-strategy-for-btc-and-eth-2)
+
+✅ Online Пример для [LIVE Trading Strategy for Ethereum on Bybit](https://www.kaggle.com/code/olegshpagin/live-trading-strategy-for-ethereum-on-bybit)
+
 
 **Можно сказать Спасибо:**
 
