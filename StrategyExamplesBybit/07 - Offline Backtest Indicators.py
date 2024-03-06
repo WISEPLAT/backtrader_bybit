@@ -146,11 +146,14 @@ if __name__ == '__main__':
     symbol = 'BTC' + coin_target  # the ticker by which we will receive data in the format <CodeTickerBaseTicker>
     symbol2 = 'ETH' + coin_target  # the ticker by which we will receive data in the format <CodeTickerBaseTicker>
 
+    accountType = Config.BYBIT_ACCOUNT_TYPE
     store = BybitStore(
         api_key=Config.BYBIT_API_KEY,
         api_secret=Config.BYBIT_API_SECRET,
         coin_target=coin_target,
-        testnet=False)  # Bybit Storage
+        testnet=False,
+        accountType=accountType,
+    )  # Bybit Storage
 
     # # live connection to Bybit - for Offline comment these two lines
     # broker = store.getbroker()

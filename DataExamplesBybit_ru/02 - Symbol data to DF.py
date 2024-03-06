@@ -64,11 +64,14 @@ if __name__ == '__main__':  # Точка входа при запуске это
     coin_target = 'USDT'  # базовый тикер, в котором будут осуществляться расчеты
     symbol = 'BTC' + coin_target  # тикер, по которому будем получать данные в формате <КодТикераБазовыйТикер>
 
+    accountType = Config.BYBIT_ACCOUNT_TYPE
     store = BybitStore(
         api_key=Config.BYBIT_API_KEY,
         api_secret=Config.BYBIT_API_SECRET,
         coin_target=coin_target,
-        testnet=False)  # Хранилище Bybit
+        testnet=False,
+        accountType=accountType,
+    )  # Хранилище Bybit
     broker = store.getbroker()
     cerebro.setbroker(broker)
 

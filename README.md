@@ -54,13 +54,14 @@ pip install -r requirements.txt
 ### Getting started
 To make it easier to figure out how everything works, many examples have been made in the folders **DataExamplesBybit** and **StrategyExamplesBybit**.
 
-Before running the example, you need to get your API key and Secret key, and put them in the file **ConfigBybit\Config.py:**
+Before running the example, you need to get your API key, Secret key and Type of Account, and put them in the file **ConfigBybit\Config.py:**
 
 ```python
 # content of ConfigBybit\Config.py 
 class Config:
     BYBIT_API_KEY = "YOUR_API_KEY"
     BYBIT_API_SECRET = "YOUR_SECRET_KEY"
+    BYBIT_ACCOUNT_TYPE = "UNIFIED"  # UNIFIED or CONTRACT
 ```
 
 #### How to get a Bybit API token:
@@ -228,13 +229,14 @@ pip install -r requirements.txt
 ### Начало работы
 Чтобы было легче разобраться как всё работает, сделано множество примеров в папках **DataExamplesBybit_ru** и **StrategyExamplesBybit_ru**.
 
-Перед запуском примера, необходимо получить свой API ключ и Secret ключ, и прописать их в файле **ConfigBybit\Config.py:**
+Перед запуском примера, необходимо получить свой API ключ, Secret ключ и Тиа аккаунта, и прописать их в файле **ConfigBybit\Config.py:**
 
 ```python
 # content of ConfigBybit\Config.py 
 class Config:
     BYBIT_API_KEY = "YOUR_API_KEY"
     BYBIT_API_SECRET = "YOUR_SECRET_KEY"
+    BYBIT_ACCOUNT_TYPE = "UNIFIED"  # UNIFIED or CONTRACT
 ```
 
 ####  Как получить токен Bybit API:

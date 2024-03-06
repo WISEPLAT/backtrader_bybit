@@ -11,12 +11,13 @@ if __name__ == '__main__':  # Entry point when running this script
     coin_target = 'USDT'  # the base ticker in which calculations will be performed
     symbols = ('BTC', 'ETH')  # tickers for which we will receive data
 
+    accountType = Config.BYBIT_ACCOUNT_TYPE
     store = BybitStore(
         api_key=Config.BYBIT_API_KEY,
         api_secret=Config.BYBIT_API_SECRET,
         coin_target=coin_target,
         testnet=False,
-        # tld="us",  # for US customers => to use the 'Bybit.us' url
+        accountType=accountType,
     )  # Bybit Storage
     broker = store.getbroker()
     cerebro.setbroker(broker)

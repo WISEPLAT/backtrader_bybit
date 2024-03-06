@@ -111,11 +111,14 @@ if __name__ == '__main__':
     coin_target = 'USDT'  # базовый тикер, в котором будут осуществляться расчеты
     symbols = ('BTC', 'ETH', 'BNB')  # тикеры, по которым будем получать данные
 
+    accountType = Config.BYBIT_ACCOUNT_TYPE
     store = BybitStore(
         api_key=Config.BYBIT_API_KEY,
         api_secret=Config.BYBIT_API_SECRET,
         coin_target=coin_target,
-        testnet=False)  # Хранилище Bybit
+        testnet=False,
+        accountType=accountType,
+    )  # Хранилище Bybit
 
     # live подключение к Bybit - для Offline закомментировать эти две строки
     broker = store.getbroker()

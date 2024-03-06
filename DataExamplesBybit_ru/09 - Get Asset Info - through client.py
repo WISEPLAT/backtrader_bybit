@@ -11,11 +11,14 @@ cerebro.broker.setcommission(commission=0.0015)  # Установленная к
 coin_target = 'USDT'  # базовый тикер, в котором будут выполняться вычисления
 symbols = ('BTC', 'ETH', 'BNB')  # тикеры, по которым мы будем получать данные
 
+accountType = Config.BYBIT_ACCOUNT_TYPE
 store = BybitStore(
     api_key=Config.BYBIT_API_KEY,
     api_secret=Config.BYBIT_API_SECRET,
     coin_target=coin_target,
-    testnet=False)  # Bybit Storage
+    testnet=False,
+    accountType=accountType,
+)  # Bybit Storage
 
 client = store  # !!!
 
