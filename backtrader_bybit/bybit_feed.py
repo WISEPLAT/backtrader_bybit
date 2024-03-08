@@ -240,12 +240,15 @@ class BybitData(DataBase):
                     print("Exception (try set from_date in utc format):", e)
 
                 # change self.start_date at every request
-                self.start_date = self.all_history_data[-1][0]  # timestamp
-                # b = self.start_date
-                self.start_date = datetime.fromtimestamp(int(self.start_date) / 1000) + timedelta(minutes=delta_time)
-                self.start_date = round(int(self.start_date.timestamp()) * 1000)
-                # print(f"\t --> {datetime.fromtimestamp(int(b) / 1000)} {datetime.fromtimestamp(int(self.start_date) / 1000)}")
-
+                if self.all_history_data:
+                    self.start_date = self.all_history_data[-1][0]  # timestamp
+                    # b = self.start_date
+                    self.start_date = datetime.fromtimestamp(int(self.start_date) / 1000) + timedelta(minutes=delta_time)
+                    self.start_date = round(int(self.start_date.timestamp()) * 1000)
+                    # print(f"\t --> {datetime.fromtimestamp(int(b) / 1000)} {datetime.fromtimestamp(int(self.start_date) / 1000)}")
+                else:
+                    self.start_date = datetime.fromtimestamp(int(self.start_date) / 1000) + timedelta(minutes=delta_time * self.limit)
+                    self.start_date = round(int(self.start_date.timestamp()) * 1000)
 
         else:
             self._start_live()
