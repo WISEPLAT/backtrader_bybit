@@ -198,7 +198,7 @@ class BybitData(DataBase):
             else:
                 if self.interval == 'D': delta_time = 60 * 24
                 if self.interval == 'W': delta_time = 60 * 24 * 7
-                if self.interval == 'W': delta_time = 60 * 24 * 30
+                if self.interval == 'M': delta_time = 60 * 24 * 30
 
             total_minutes = (datetime.now() - self.start_date).total_seconds() // 60
             num_requests = int(total_minutes // (self.limit * delta_time))
