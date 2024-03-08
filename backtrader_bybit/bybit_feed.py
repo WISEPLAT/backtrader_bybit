@@ -31,6 +31,8 @@ class BybitData(DataBase):
 
         self.limit = 200
         if 'rows_by_request' in kwargs: self.limit = kwargs['rows_by_request']
+        if self.limit > 1000: self.limit = 1000
+        if self.limit < 200: self.limit = 200
 
         if hasattr(self.p, 'timeframe'): self.timeframe = self.p.timeframe
         if hasattr(self.p, 'compression'): self.compression = self.p.compression
@@ -218,14 +220,16 @@ class BybitData(DataBase):
 
                 self.get_live_bars_from = _now
 
-                print(f"- {self.symbol} - History data from {datetime.fromtimestamp(int(self.start_date) // 1000)} + {self.limit} rows - Ok")
-
                 if 'result' in klines and 'list' in klines['result'] and klines['result']['list']:
                     klines = klines['result']['list']
                     klines = klines[::-1]  # inverse
                     klines = klines[:-1]  # -1 last row as it can be in process of forming
                 else:
                     klines = []
+
+                is_data = ""
+                if not len(klines): is_data = " (no data)"
+                print(f"- {self.symbol} - History data from {datetime.fromtimestamp(int(self.start_date) // 1000)} + {self.limit} rows{is_data} - Ok")
 
                 if not self.all_history_data:
                     self.all_history_data = klines  # first receive of the history -> save it to a list
