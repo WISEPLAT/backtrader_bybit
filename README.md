@@ -141,6 +141,13 @@ The **StrategyExamplesBybit** folder contains the code of sample strategies.
     * generates 177% of revenue at the time of video recording))
     * Non-live mode - for testing strategies without sending orders to the exchange!
 
+
+* **08 - Offline Backtest Margin Trade with Leverage 50x - Linear Trade.py** - An example of a trading strategy with the use of margin Leverage 50x for a history backtest using SMA indicators - not live mode - for two BTC and ETH tickers on the base of USDT ticker.
+  * The strategy shows how to apply indicators SMA to several tickers at the same time.
+    * generates 50% of revenue at the time of file publishing
+    * Non-live mode - for testing strategies without sending orders to the exchange!
+  * The strategy shows how to use margin with Leverage 50x for backtest on history market data for cryptocurrencies.
+
 ## Thanks
 - backtrader: Very simple and cool library!
 - [pybit](https://github.com/bybit-exchange/pybit): For creating Bybit API wrapper, shortening a lot of work.
@@ -320,6 +327,13 @@ class Config:
   * В стратегии показано как применять индикаторы (SMA, RSI) к нескольким тикерам одновременно.
     * генерит 177% дохода на момент записи видео )) 
     * Не live режим - для тестирования стратегий без отправки заявок на биржу!
+
+
+* **08 - Offline Backtest Margin Trade with Leverage 50x - Linear Trade.py** - Пример торговой стратегии с использованием маржинального плеча 50x для исторического бэктеста с использованием индикаторов SMA - не в режиме реального времени - для двух тикеров BTC и ETH на основе тикера USDT.
+  * Стратегия показывает, как применять индикаторы SMA к нескольким тикерам одновременно.
+    * генерирует 50% дохода на момент публикации файла
+    * Не live режим - для тестирования стратегий без отправки ордеров на биржу!!
+  * Стратегия показывает, как использовать маржинальную торговлю с кредитным плечом 50x для тестирования на исторических рыночных данных для криптовалют.
 
 ## Спасибо
 - backtrader: очень простая и классная библиотека!
