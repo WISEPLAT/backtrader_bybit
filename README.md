@@ -21,6 +21,8 @@ BTC (Bitcoin BTC): 1ENhx1HUMJZjGAfYaT1vfsqwKHgVkqwX1D
 
 ETH (Ethereum ERC20): 0xfd546640c911ba90d1409a4fbbb4322ae73e7814
 
+or by **UID** (no commission) **112927970** through the exchange [Bybit](https://www.bybit.com/invite?ref=KXLXXE%230 )
+
 ## Installation
 1) The simplest way:
 ```shell
@@ -206,6 +208,8 @@ USDT (Tron TRC20): TEHaXZX7KLjAm4eLWdf4VKfsqRUQpv8fTT
 BTC (Bitcoin BTC): 1ENhx1HUMJZjGAfYaT1vfsqwKHgVkqwX1D
 
 ETH (Ethereum ERC20): 0xfd546640c911ba90d1409a4fbbb4322ae73e7814
+
+или по **UID** (без комиссии) **112927970** через биржу [Bybit](https://www.bybit.com/invite?ref=KXLXXE%230 )
 
 
 ## Установка
