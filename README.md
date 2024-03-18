@@ -21,7 +21,7 @@ BTC (Bitcoin BTC): 1ENhx1HUMJZjGAfYaT1vfsqwKHgVkqwX1D
 
 ETH (Ethereum ERC20): 0xfd546640c911ba90d1409a4fbbb4322ae73e7814
 
-or by **UID** (no commission) **112927970** through the exchange [Bybit](https://www.bybit.com/invite?ref=KXLXXE%230 )
+or by [Bybit](https://www.bybit.com/invite?ref=KXLXXE%230 ) **UID** (no commission) **112927970** through the exchange
 
 ## Installation
 1) The simplest way:
@@ -146,9 +146,26 @@ The **StrategyExamplesBybit** folder contains the code of sample strategies.
 
 * **08 - Offline Backtest Margin Trade with Leverage 50x - Linear Trade.py** - An example of a trading strategy with the use of margin Leverage 50x for a history backtest using SMA indicators - not live mode - for two BTC and ETH tickers on the base of USDT ticker.
   * The strategy shows how to apply indicators SMA to several tickers at the same time.
-    * generates 50% of revenue at the time of file publishing
+    * generates 792% of revenue at the time of file publishing
     * Non-live mode - for testing strategies without sending orders to the exchange!
   * The strategy shows how to use margin with Leverage 50x for backtest on history market data for cryptocurrencies.
+```commandline
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Was money: 2000.00
+Ending Portfolio Value: 17853.46
+Remaining available funds: 4887.38
+Assets in the amount of: 12966.08
+
+2000.00 ==> 17853.46 ==> +792.67%
+
+SQN:  AutoOrderedDict([('sqn', 1.0031776139642996), ('trades', 4)])
+VWR:  OrderedDict([('vwr', 25.613023915870777)])
+TDD:  OrderedDict([('maxdrawdown', 65.77087178559279), ('maxdrawdownperiod', 304)])
+DD:  AutoOrderedDict([('len', 6), ('drawdown', 20.46618403019286), ('moneydown', 229.70872494394746), ('max', AutoOrderedDict([('len', 304), ('drawdown', 65.77087178559279), ('moneydown', 295.8359186842)]))])
+AR:  OrderedDict([(2021, 0.0), (2022, -0.42822236821405035), (2023, 4.540830244681184), (2024, 1.8176719585784271)])
+Profitability:  OrderedDict([('rtot', 2.1890502317806253), ('ravg', 0.0022178827069712515), ('rnorm', 0.7487590850582526), ('rnorm100', 74.87590850582527)])
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+```
 
 ## Thanks
 - backtrader: Very simple and cool library!
@@ -209,7 +226,7 @@ BTC (Bitcoin BTC): 1ENhx1HUMJZjGAfYaT1vfsqwKHgVkqwX1D
 
 ETH (Ethereum ERC20): 0xfd546640c911ba90d1409a4fbbb4322ae73e7814
 
-или по **UID** (без комиссии) **112927970** через биржу [Bybit](https://www.bybit.com/invite?ref=KXLXXE%230 )
+или по [Bybit](https://www.bybit.com/invite?ref=KXLXXE%230 ) **UID** (без комиссии) **112927970** через биржу 
 
 
 ## Установка
@@ -335,9 +352,26 @@ class Config:
 
 * **08 - Offline Backtest Margin Trade with Leverage 50x - Linear Trade.py** - Пример торговой стратегии с использованием маржинального плеча 50x для исторического бэктеста с использованием индикаторов SMA - не в режиме реального времени - для двух тикеров BTC и ETH на основе тикера USDT.
   * Стратегия показывает, как применять индикаторы SMA к нескольким тикерам одновременно.
-    * генерирует 50% дохода на момент публикации файла
+    * генерирует 792% дохода на момент публикации файла
     * Не live режим - для тестирования стратегий без отправки ордеров на биржу!!
   * Стратегия показывает, как использовать маржинальную торговлю с кредитным плечом 50x для тестирования на исторических рыночных данных для криптовалют.
+```commandline
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Was money: 2000.00
+Ending Portfolio Value: 17853.46
+Remaining available funds: 4887.38
+Assets in the amount of: 12966.08
+
+2000.00 ==> 17853.46 ==> +792.67%
+
+SQN:  AutoOrderedDict([('sqn', 1.0031776139642996), ('trades', 4)])
+VWR:  OrderedDict([('vwr', 25.613023915870777)])
+TDD:  OrderedDict([('maxdrawdown', 65.77087178559279), ('maxdrawdownperiod', 304)])
+DD:  AutoOrderedDict([('len', 6), ('drawdown', 20.46618403019286), ('moneydown', 229.70872494394746), ('max', AutoOrderedDict([('len', 304), ('drawdown', 65.77087178559279), ('moneydown', 295.8359186842)]))])
+AR:  OrderedDict([(2021, 0.0), (2022, -0.42822236821405035), (2023, 4.540830244681184), (2024, 1.8176719585784271)])
+Profitability:  OrderedDict([('rtot', 2.1890502317806253), ('ravg', 0.0022178827069712515), ('rnorm', 0.7487590850582526), ('rnorm100', 74.87590850582527)])
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+```
 
 ## Спасибо
 - backtrader: очень простая и классная библиотека!

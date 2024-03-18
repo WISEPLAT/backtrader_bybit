@@ -184,9 +184,13 @@ if __name__ == '__main__':
     print()
     print("$"*77)
     # Print the final cash amount
+    print('Was money: %.2f' % money)
     print('Ending Portfolio Value: %.2f' % cerebro.broker.getvalue())  # Liquidation value of the portfolio
     print('Remaining available funds: %.2f' % cerebro.broker.getcash())
     print('Assets in the amount of: %.2f' % (cerebro.broker.getvalue() - cerebro.broker.getcash()))
+    print()
+    p = (cerebro.broker.getvalue() / money - 1) * 100
+    print(f"{money:.2f} ==> {cerebro.broker.getvalue():.2f} ==> +{p:.2f}%")
     print()
     print('SQN: ', result[0].analyzers.SQN.get_analysis())
     print('VWR: ', result[0].analyzers.VWR.get_analysis())
