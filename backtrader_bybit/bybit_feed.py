@@ -204,10 +204,10 @@ class BybitData(DataBase):
 
             total_minutes = (datetime.now() - self.start_date).total_seconds() // 60
             num_requests = int(total_minutes // (self.limit * delta_time))
-            self.start_date = round(self.start_date.timestamp()*1000)
 
             # get all rows by limit per request
             for i in range(num_requests+1):
+                self.start_date = round(self.start_date.timestamp() * 1000)
                 _now = datetime.now()
                 klines = self._store.bybit_session.get_kline(
                     category=self._store.category,
@@ -248,11 +248,11 @@ class BybitData(DataBase):
                     self.start_date = self.all_history_data[-1][0]  # timestamp
                     # b = self.start_date
                     self.start_date = datetime.fromtimestamp(int(self.start_date) / 1000) + timedelta(minutes=delta_time)
-                    self.start_date = round(int(self.start_date.timestamp()) * 1000)
+                    # self.start_date = round(int(self.start_date.timestamp()) * 1000)
                     # print(f"\t --> {datetime.fromtimestamp(int(b) / 1000)} {datetime.fromtimestamp(int(self.start_date) / 1000)}")
                 else:
                     self.start_date = datetime.fromtimestamp(int(self.start_date) / 1000) + timedelta(minutes=delta_time * self.limit)
-                    self.start_date = round(int(self.start_date.timestamp()) * 1000)
+                    # self.start_date = round(int(self.start_date.timestamp()) * 1000)
 
         else:
             self._start_live()
