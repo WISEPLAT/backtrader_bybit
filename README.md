@@ -17,11 +17,9 @@ For API connection we are using library [pybit](https://github.com/bybit-exchang
 
 USDT (Tron TRC20): TEHaXZX7KLjAm4eLWdf4VKfsqRUQpv8fTT
 
-BTC (Bitcoin BTC): 1ENhx1HUMJZjGAfYaT1vfsqwKHgVkqwX1D
+or by [**Binance**](https://accounts.binance.com/register?ref=200640624 ) **ID** **200640624** through the exchange (no commission)
 
-ETH (Ethereum ERC20): 0xfd546640c911ba90d1409a4fbbb4322ae73e7814
-
-or by [Bybit](https://www.bybit.com/invite?ref=KXLXXE%230 ) **UID** (no commission) **112927970** through the exchange
+or by [**Bybit**](https://www.bybit.com/invite?ref=KXLXXE%230 ) **UID** **112927970** through the exchange (no commission)
 
 ## Installation
 1) The simplest way:
@@ -222,11 +220,9 @@ Please put a Star 🌟 for this code
 
 USDT (Tron TRC20): TEHaXZX7KLjAm4eLWdf4VKfsqRUQpv8fTT
 
-BTC (Bitcoin BTC): 1ENhx1HUMJZjGAfYaT1vfsqwKHgVkqwX1D
+или по [**Binance**](https://accounts.binance.com/register?ref=200640624 ) **ID** **200640624** через биржу (без комиссии)
 
-ETH (Ethereum ERC20): 0xfd546640c911ba90d1409a4fbbb4322ae73e7814
-
-или по [Bybit](https://www.bybit.com/invite?ref=KXLXXE%230 ) **UID** (без комиссии) **112927970** через биржу 
+или по [**Bybit**](https://www.bybit.com/invite?ref=KXLXXE%230 ) **UID** **112927970** через биржу (без комиссии) 
 
 
 ## Установка
